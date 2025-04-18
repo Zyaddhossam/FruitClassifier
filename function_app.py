@@ -8,7 +8,6 @@ PREDICTION_KEY = os.environ["PREDICTION_KEY"]
 PREDICTION_URL = os.environ["PREDICTION_URL"]
 SQL_CONNECTION_STRING = os.environ["SQL_CONNECTION_STRING"]
 
-# Define Function App
 app = func.FunctionApp()
 
 def predict_fruit(image_bytes):
@@ -38,8 +37,8 @@ def update_database(fruit_type):
     conn.commit()
     conn.close()
 
-@app.blob_trigger(arg_name="blob", path="input/{name}", connection="AzureWebJobsStorage")
-def main(blob: func.InputStream):
+@app.blob_trigger(arg_name="blob", source="EventGrid", path="input/{name}", connection="AzureWebJobsStorage")
+def FruitsInc(blob: func.InputStream):
     logging.info(f"Processing blob: {blob.name}")
     image_bytes = blob.read()
     fruit_type = predict_fruit(image_bytes)
