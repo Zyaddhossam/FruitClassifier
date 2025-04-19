@@ -1,5 +1,5 @@
 
-# 🍎 Azure Blob-Triggered Fruit Classification System
+# 🍎 Azure Blob-Triggered Fruit Classification Systems
 
 This project is an automated image classification system that uses Azure Functions and Custom Vision AI to classify fruit images uploaded to Azure Blob Storage. The system updates the count of each classified fruit in an Azure SQL Database and deletes the image afterward to maintain cleanliness.
 
