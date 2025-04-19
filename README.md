@@ -10,6 +10,8 @@ This project is an automated image classification system that uses Azure Functio
 ```
 FruitClassifier/
 │
+├── Azure                        # All screenshots from Azure Portal
+├── Azure Diagram                # It have the solution diagram picture
 ├── function_app.py              # Main function logic
 ├── requirements.txt             # Python dependencies
 ├── host.json                    # Azure Functions host configuration
