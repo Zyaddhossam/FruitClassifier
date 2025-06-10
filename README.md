@@ -7,6 +7,8 @@ This project is an automated image classification system that uses Azure Functio
 
 ## 📦 Project Structure
 
+### Files
+
 ```
 FruitClassifier/
 │
@@ -21,12 +23,17 @@ FruitClassifier/
 
 ---
 
+### Services Diagram
+
+![Azure Diagram](Azure%20Diagram/Azure%20Solution%20Diagram.png)
+
+
 ## ⚙️ How It Works
 
 1. **Trigger**: Uploading a fruit image to Blob Storage (`input/` container) triggers the Azure Function.
 2. **Prediction**: The image is sent to a Custom Vision API for classification.
 3. **Database Update**: The predicted fruit type count is incremented in Azure SQL Database.
-4. **Cleanup**: The blob is deleted after processing.
+4. **Cleanup**: The blob uploaded file is deleted after processing.
 
 ---
 
